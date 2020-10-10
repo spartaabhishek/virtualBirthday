@@ -1,0 +1,306 @@
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+* {
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color-primary: #4687cc;
+    --color-secondary: #dfb26f;
+    --color-tertiary: #d52121;
+    --color-chocolate: #4d311b;
+    --color-chocolate-icing: #241306;
+    --color-strawberry: #ca8186;
+    --color-strawberry-icing: #ffd2dc;
+    --color-pistachio: #9dd8bb;
+    --color-pistachio-icing: #cce8e3;
+    --color-red-velvet: #681d1d;
+    --color-red-velvet-icing: #dcc6c0;
+    --color-text-base: #d0f4ff;
+    --font-primary: "Ubuntu", sans-serif;
+}
+body {
+    background: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: 100%;
+}
+.container {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: calc(50% - 200px);
+    left: calc(50% - 150px);
+}
+.cake {
+    position: absolute;
+    width: 150px;
+    bottom: 100px;
+    left: calc(50% - 75px);
+}
+.cake-layer {
+    position: relative;
+    width: 150px;
+    height: 25px;
+}
+.middle-layer {
+    height: 15px;
+}
+.cake-icing {
+    position: relative;
+    width: 150px;
+    height: 12px;
+    border-radius: 10px 10px 0 0;
+}
+.drip-container {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.cake-icing-drip {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 10px;
+    height: 20px;
+    border-radius: 10px;
+    z-index: 1; 
+}
+.drip-2 {
+    top: 0px;
+    left: 25px;
+    width: 10px;
+    height: 35px;
+}
+.drip-3 {
+    left: 40px;
+    height: 15px;
+}
+.top .cake-layer,
+.top .cake-icing {
+    width: 116px;
+    margin-left: 17px;
+    height: 15px;
+}
+h2{
+    color:white;
+}
+input{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  
+box-sizing: border-box;
+}
+#rando-button  {
+    position: absolute;
+    left: calc(50% - 81px);
+    bottom: 0px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    background: transparent;
+    padding: 10px 20px;
+    border: 2px solid var(--color-text-base);
+    color: var(--color-text-base);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    border-radius: 2px;
+}
+#rando-button:hover {
+    cursor: pointer;
+}
+.sparkler {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 55px;
+    border-radius: 50px;
+    top: 15px;
+    z-index: 4;
+}
+.sparkler div {
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 40px;
+    top: 0;
+    left: 17px;
+    background: transparent;
+    z-index: 3;
+    transform: rotate(0);
+}
+.sparkler div:nth-of-type(2) {
+    transform: rotate(45deg);
+    left: 20px;
+}
+.sparkler div:nth-of-type(3) {
+    transform: rotate(90deg);
+}
+.sparkler div:nth-of-type(4) {
+    transform: rotate(135deg);
+}
+.sparkler div span {
+    position: relative;
+    display: block;
+    width: 2px;
+    height: 2px;
+    margin: 4px;
+    background: white;
+    border-radius: 2px;
+    animation-name: sparkle-effect;
+    transform-origin: center center;
+    animation-iteration-count: infinite;
+    animation-duration: .1s;
+}
+.sparkler div span:nth-last-of-type(2) {
+    animation-duration: .2s;
+}
+.sparkler div span:nth-last-of-type(3) {
+    animation-duration: .3s;
+}
+.sparkler div span:nth-last-of-type(3) {
+    animation-duration: .4s;
+}
+.sparkler div span:nth-last-of-type(4) {
+    animation-duration: .5s;
+}
+.sparkler-stem {
+    position: relative;
+    width: 2px;
+    height: 30px;
+    margin-left: 73px;
+    background: #333;
+}
+.bounce-cake .cake-layer {
+    animation-name: open-layers;
+    transform-origin: center bottom;
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+}
+.bounce-cake .drip-container,
+.bounce-cake .sparkler,
+.bounce-cake .sparkler-stem {
+    animation-name: gravity-icing;
+    transform-origin: center bottom;
+    animation-duration: 1.7s;
+    animation-fill-mode: both;
+}
+.bounce-cake {
+    animation-name: bounce-cake;
+    transform-origin: center bottom;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+@keyframes rotate-sparkler {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+@keyframes sparkle-effect {
+    from, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    40%, 43% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}  
+@keyframes gravity-icing {
+    from, 20%, 53%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -40px, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -5px, 0);
+    }
+} 
+@keyframes open-layers {
+    from, 50%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        margin-top: 0;
+        transform: none;
+    }
+    60% {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        margin-top: 20px;
+        transform: skewX(-1.5deg) skewY(-1.5deg);
+    }
+} 
+@keyframes bounce-cake {
+    from, 20%, 53%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -120px, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -5px, 0);
+    }
+}
+.default-cake .cake-layer {
+background: var(--color-secondary);
+}
+.default-cake .cake-icing,
+.default-cake .cake-icing-drip {
+background: var(--color-tertiary);
+}
+.chocolate-cake .cake-layer {
+background: var(--color-chocolate);
+}
+.chocolate-cake .cake-icing,
+.chocolate-cake .cake-icing-drip {
+background: var(--color-chocolate-icing);
+}
+.strawberry-cake .cake-layer {
+background: var(--color-strawberry);
+}
+.strawberry-cake .cake-icing,
+.strawberry-cake .cake-icing-drip {
+background: var(--color-strawberry-icing);
+}
+.pistachio-cake .cake-layer {
+background: var(--color-pistachio);
+}
+.pistachio-cake .cake-icing,
+.pistachio-cake .cake-icing-drip {
+background: var(--color-pistachio-icing);
+}
+.red-velvet-cake .cake-layer {
+background: var(--color-red-velvet);
+}
+.red-velvet-cake .cake-icing,
+.red-velvet-cake .cake-icing-drip {
+background: var(--color-red-velvet-icing);
+}
+.default-cake .middle-layer,
+.chocolate-cake .middle-layer,
+.strawberry-cake .middle-layer,
+.pistachio-cake .middle-layer,
+.red-velvet-cake .middle-layer {
+background: white;
+}
+
+
+

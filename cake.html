@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Birthday</title>
+	<link href="celebration.css"></link>
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<style>
+		html,body{
+			padding: 0px;
+			margin: 0px;
+			height: 100%;		
+			font-family: Helvetica;
+		}
+		#cake{
+			position: absolute;
+			max-width: 1000px;
+			height: auto;
+		}
+		.container1{
+			height: 100%;
+			min-width: 1000px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: url(decoration.jpg);
+			background-size: cover;
+		}
+
+		.container2{
+			height: auto;
+			min-width: 1000px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+			background-size: cover;
+			
+		}		
+		#btn{
+			position: absolute;
+			top:15%;
+			right:5%;
+			width: 150px;
+			height: 80px;
+			background-color: rgba(0, 0, 0, 0.5);
+			font-weight: bold;
+			color:#fff;
+			font-size: 20px;
+
+		}
+		.celebrateContainer{
+			display: none;
+		}	
+
+		#gallery{
+			width: 300px;
+			height: 200px;
+		}	
+
+		.mo-fire {
+
+			position: absolute;
+			z-index: 10;
+		}
+
+
+		.blow1 {
+			animation-name: diffuse;
+			animation-duration: 5s;
+			animation-timing-function: ease-out;
+			animation-direction: alternate;
+
+		}
+
+		.blow2 {
+			animation-name: diffuse;
+			animation-duration: 4s;
+			animation-timing-function: ease-out;
+			animation-direction: alternate;
+		}
+
+		@keyframes diffuse {
+			0%{
+				opacity: 0.7;
+			}
+			25%{
+				opacity: 0.5;
+			}
+			50%{
+				opacity: 0.3;
+			}
+			75%{
+				opacity: 0.2;
+			}
+			100%{
+				opacity: 0;
+				display: none;
+			}
+		}
+
+		.flame {
+			animation-name: flamefly;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			opacity: 0;
+			transform-origin: 50% 50% 0;
+		}
+		.flame.one {
+			animation-delay: 1s;
+			animation-duration: 3s;
+		}
+		.flame3.two{
+			animation-duration: 5s;
+			animation-delay: 1s;
+		}
+
+		.flame-main {
+			animation-name: flameWobble;
+			animation-duration: 3s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		.flame-main.one {
+			animation-duration: 4s;
+			animation-delay: 1s;
+		}
+		.flame-main.two {
+			animation-duration: 3s;
+			animation-delay: 2s;
+		}
+		.flame-main.three {
+			animation-duration: 2.1s;
+			animation-delay: 3s;
+		}
+		.flame-main.four {
+			animation-duration: 3.2s;
+			animation-delay: 4s;
+		}
+		.flame-main.five {
+			animation-duration: 2.5s;
+			animation-delay: 5s;
+		}
+		@keyframes flameWobble {
+			50% {
+				transform: scale(1,1.2) translate(0, -30px) rotate(-2deg);
+			}
+		}
+		@keyframes flamefly {
+			0%{
+				transform: translate(0) rotate(180deg);
+			}
+			50% {
+				opacity: 1;
+			}
+			100% {
+				transform: translate(-20px, -100px) rotate(180deg);
+				opacity: 0;
+			}
+
+
+
+
+		</style>
+	</head>
+	<body>
+		<div class="container1">
+
+			<div class="mo-fire" id="fire-1">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				width="125px" height="189.864px" viewBox="0 0 125 189.864" enable-background="new 0 0 125 189.864" xml:space="preserve">
+				<path class="flame-main" fill="#F36E21" d="M76.553,186.09c0,0-10.178-2.976-15.325-8.226s-9.278-16.82-9.278-16.82s-0.241-6.647-4.136-18.465
+				c0,0,3.357,4.969,5.103,9.938c0,0-5.305-21.086,1.712-30.418c7.017-9.333,0.571-35.654-2.25-37.534c0,0,13.07,5.64,19.875,47.54
+				c6.806,41.899,16.831,45.301,6.088,53.985"/>
+				<path class="flame-main one" fill="#F6891F" d="M61.693,122.257c4.117-15.4,12.097-14.487-11.589-60.872c0,0,32.016,10.223,52.601,63.123
+				c20.585,52.899-19.848,61.045-19.643,61.582c0.206,0.537-19.401-0.269-14.835-18.532S57.576,137.656,61.693,122.257z"/>
+				<path class="flame-main two" fill="#FFD04A" d="M81.657,79.192c0,0,11.549,24.845,3.626,40.02c-7.924,15.175-21.126,41.899-0.425,64.998
+				C84.858,184.21,125.705,150.905,81.657,79.192z"/>
+				<path class="flame-main three" fill="#FDBA16" d="M99.92,101.754c0,0-23.208,47.027-12.043,80.072c0,0,32.741-16.073,20.108-45.79
+				C95.354,106.319,99.92,114.108,99.92,101.754z"/>
+				<path class="flame-main four" fill="#F36E21" d="M103.143,105.917c0,0,8.927,30.753-1.043,46.868c-9.969,16.115-14.799,29.041-14.799,29.041
+				S134.387,164.603,103.143,105.917z"/>
+				<path class="flame-main five" fill="#FDBA16" d="M62.049,104.171c0,0-15.645,67.588,10.529,77.655C98.753,191.894,69.033,130.761,62.049,104.171z"/>
+				<path class="flame" fill="#F36E21" d="M101.011,112.926c0,0,8.973,10.519,4.556,16.543C99.37,129.735,106.752,117.406,101.011,112.926z"/>
+				<path class="flame one" fill="#F36E21" d="M55.592,126.854c0,0-3.819,13.29,2.699,16.945C64.038,141.48,55.907,132.263,55.592,126.854z"/>
+				<path class="flame two" fill="#F36E21" d="M54.918,104.595c0,0-3.959,6.109-1.24,8.949C56.93,113.256,52.228,107.329,54.918,104.595z"/>
+			</svg>
+		</div>
+
+		<img id="cake" src="cake.png" alt="">
+
+		<button id="btn" onclick="blow()">Blow</button>
+
+		<div class="celebrateContainer">
+			<button id="btn" onclick="playpause()">Play/Pause</button>				
+			<canvas id=c></canvas>
+		</div>
+	</div>
+
+	<div class="container2"> 
+		<div class="container">
+		<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Memories</h1>
+
+		<hr class="mt-2 mb-5">
+
+		<div id="row" class="row text-center text-lg-left">
+		</div>
+		</div>
+	</div>
+	<script src="celebration.js"></script>
+	<script>
+
+		function buildNode(){
+			const cake = document.getElementById("cake").getBoundingClientRect();
+			const fire1 = document.querySelector("#fire-1")
+			const cont = document.querySelector(".container1")
+
+			fire1.style['z-index']=10;
+
+
+			const fire2 = fire1.cloneNode(true)
+			fire2.id="fire-2"
+			cont.appendChild(fire2)
+
+			const fire3 = fire1.cloneNode(true)
+			fire3.id="fire-3"
+			fire3.style["z-index"]=2
+			fire3.style.transform="scaleX(-1)"
+			cont.appendChild(fire3)
+
+			const fire4 = fire1.cloneNode(true)
+			fire4.id="fire-4"
+			cont.appendChild(fire4)
+
+			const fire5 = fire1.cloneNode(true)
+			fire5.id="fire-5"
+			fire5.style.transform="scaleX(-1)"
+			cont.appendChild(fire5)
+
+			const fire6 = fire1.cloneNode(true)
+			fire6.id="fire-6"
+			cont.appendChild(fire6)
+
+			const fire7 = fire1.cloneNode(true)
+			fire7.id="fire-7"
+			fire7.style.transform="scaleX(-1)"
+			cont.appendChild(fire7)
+
+			const fire8 = fire1.cloneNode(true)
+			fire8.id="fire-8"
+			cont.appendChild(fire8)
+
+			const fire9 = fire1.cloneNode(true)
+			fire9.id="fire-9"
+			fire9.style.transform="scaleX(-1)"
+			cont.appendChild(fire9)
+
+			const fire10 = fire1.cloneNode(true)
+			fire10.id="fire-10"
+			cont.appendChild(fire10)
+
+			const fire11 = fire1.cloneNode(true)
+			fire11.id="fire-11"
+			fire11.style.transform="scaleX(-1)"
+			cont.appendChild(fire11)
+
+			const fire12 = fire1.cloneNode(true)
+			fire12.id="fire-12"
+			fire12.style.transform="scaleX(-1)"
+			cont.appendChild(fire12)
+
+			const fire13 = fire1.cloneNode(true)
+			fire13.id="fire-13"
+			fire13.style.transform="scaleX(-1)"
+			cont.appendChild(fire13)
+
+			position()
+		}
+
+		function position(){
+			const cake = document.getElementById("cake").getBoundingClientRect();
+			var fire = document.querySelectorAll(".mo-fire")
+			console.log(cake)
+
+			fire[1-1].style.left = `${cake.x+230}px`
+			fire[1-1].style.top = `${cake.y}px`
+
+			fire[2-1].style.left = `${cake.x+290}px`
+			fire[2-1].style.top = `${cake.y}px`
+
+			fire[3-1].style.left = `${cake.x+350}px`
+			fire[3-1].style.top = `${cake.y-45}px`
+
+			fire[4-1].style.left = `${cake.x+367}px`
+			fire[4-1].style.top = `${cake.y-45}px`
+
+			fire[5-1].style.left = `${cake.x+370}px`
+			fire[5-1].style.top = `${cake.y-5}px`
+
+			fire[6-1].style.left = `${cake.x+405}px`
+			fire[6-1].style.top = `${cake.y-40}px`
+
+			fire[7-1].style.left = `${cake.x+428}px`
+			fire[7-1].style.top = `${cake.y-3}px`
+
+			fire[8-1].style.left = `${cake.x+448}px`
+			fire[8-1].style.top = `${cake.y-42}px`
+
+			fire[9-1].style.left = `${cake.x+455}px`
+			fire[9-1].style.top = `${cake.y-4}px`
+
+			fire[10-1].style.left = `${cake.x+478}px`
+			fire[10-1].style.top = `${cake.y-4}px`
+
+			fire[11-1].style.left = `${cake.x+554}px`
+			fire[11-1].style.top = `${cake.y-35}px`
+
+			fire[12-1].style.left = `${cake.x+575}px`
+			fire[12-1].style.top = `${cake.y-2}px`
+
+			fire[13-1].style.left = `${cake.x+630}px`
+			fire[13-1].style.top = `${cake.y}px`
+		}
+
+		function blow(){
+			var audio = document.createElement("audio")
+			document.querySelector(".container1").appendChild(audio)
+			audio.src= "bhojpuriBirthday.mp3"
+			audio.play()
+			audio.currentTime+=20
+			Array.from(document.querySelectorAll(".mo-fire")).forEach((x,i)=>{
+
+				x.classList.add(i%2?"blow1":"blow2")
+				setTimeout(()=>{
+					x.style.display="none"	
+				},3500)
+
+			})
+			setTimeout(()=>{
+				var cake=document.getElementById("cake")
+				document.querySelector(".container1").removeChild(cake)
+				var ele = document.querySelector(".celebrateContainer")
+				ele.style.display='block'
+				ele.style['z-index']=100
+				ele.classList.add("celebrate")
+				celebrate()
+			},3000)
+		}
+
+		function playpause(){
+			var audio = document.querySelector('audio')
+			if(audio.paused) audio.play() 
+				else audio.pause();
+		}
+		window.onload = buildNode;
+		window.onresize = position;
+
+		(function gallery(){
+			for(let i=1;i<=6;i++){
+				var parent = document.querySelector(".container2 .container #row")
+				var img = document.createElement('img')
+				var a = document.createElement('a')
+				var newNode = document.createElement('div')
+				newNode.className = "col-lg-3 col-md-4 col-6"
+				a.className="d-block mb-4 h-100"
+				img.src=`./photos/${i}.jpg`
+				img.id='gallery'
+				a.appendChild(img)
+				newNode.appendChild(a)
+				parent.appendChild(newNode)
+			}
+		}())
+
+	</script>
+</body>
+</html>
